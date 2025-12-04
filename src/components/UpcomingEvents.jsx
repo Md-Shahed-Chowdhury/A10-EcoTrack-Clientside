@@ -20,7 +20,7 @@ const UpcomingEvents = () => {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <h2 className=" text-3xl md:text-4xl font-bold">Active Challenges</h2>
+      <h2 className=" text-3xl md:text-4xl font-bold">Upcoming Events</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
         {upcoming.map((event, index) => (
           <div

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router";
-
+import { FaArrowRight } from "react-icons/fa";
 const handleViewChallenge = () => {
   // Logic to view challenge details
   console.log("View Challenge button clicked");
@@ -40,7 +40,7 @@ const ActiveChallenges = () => {
         </div>
       ))}
     </div>
-    <button className="btn btn-primary text-black hover:bg-base-300 "><NavLink to='/challenges'>View All Challenges</NavLink></button>
+    <button className="btn btn-primary text-black hover:bg-base-300 "><NavLink className={`flex  justify-center items-center gap-2`} to='/challenges'>View All Challenges<FaArrowRight /></NavLink></button>
     </div>
   );
 };

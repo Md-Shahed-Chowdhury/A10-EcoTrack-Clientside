@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Community Clean-up Day",
+    "description": "Join neighborhood clean-up event",
+    "date": "2024-02-15T09:00:00Z",
+    "location": "Central Park",
+    "organizer": "user@example.com",
+    "maxParticipants": 50,
+    "currentParticipants": 35
+  },
+  {
+    "title": "Tree Plantation Drive",
+    "description": "Plant native trees to restore green cover",
+    "date": "2024-03-10T07:30:00Z",
+    "location": "Dhanmondi Lake Park",
+    "organizer": "greenclub@ecotrack.com",
+    "maxParticipants": 100,
+    "currentParticipants": 72
+  },
+  {
+    "title": "Eco Awareness Workshop",
+    "description": "Learn composting, recycling, and waste sorting",
+    "date": "2024-04-05T10:00:00Z",
+    "location": "Community Hall, Block B",
+    "organizer": "ecoteam@example.com",
+    "maxParticipants": 40,
+    "currentParticipants": 28
+  },
+  {
+    "title": "Beach Plastic Collection",
+    "description": "Help remove plastic waste from seaside",
+    "date": "2024-05-20T06:45:00Z",
+    "location": "Cox's Bazar Beach",
+    "organizer": "oceanclub@ecotrack.com",
+    "maxParticipants": 120,
+    "currentParticipants": 89
+  },
+  {
+    "title": "Zero-Waste Cooking Workshop",
+    "description": "Learn how to cook meals without generating waste",
+    "date": "2024-06-12T11:00:00Z",
+    "location": "Green Kitchen Studio",
+    "organizer": "chefeco@example.com",
+    "maxParticipants": 25,
+    "currentParticipants": 19
+  },
+  {
+    "title": "Urban Gardening Meet-up",
+    "description": "Discuss terrace gardening, soil mix, and sustainability tips",
+    "date": "2024-07-08T09:30:00Z",
+    "location": "Rooftop Garden Center",
+    "organizer": "urbangrow@ecotrack.com",
+    "maxParticipants": 60,
+    "currentParticipants": 44
+  }
+]

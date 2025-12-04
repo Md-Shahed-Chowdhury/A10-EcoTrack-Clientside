@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 
+const handleViewChallenge = () => {
+  // Logic to view challenge details
+  console.log("View Challenge button clicked");
+}
 const ActiveChallenges = () => {
   const [sliderChallenges, setSliderChallenges] = useState([]);
   useEffect(() => {
@@ -32,6 +36,7 @@ const ActiveChallenges = () => {
               Impact: {item.impactMetric}
             </p>
           </div>
+          <button onClick={handleViewChallenge} className="btn bg-base-300 hover:scale-110 ml-5 mb-5 transition duration-100" >View details</button>
         </div>
       ))}
     </div>

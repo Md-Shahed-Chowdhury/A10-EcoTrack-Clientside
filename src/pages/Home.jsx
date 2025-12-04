@@ -3,6 +3,7 @@ import Slider from '../components/slider/Slider';
 import Statistics from '../components/Statistics';
 import ActiveChallenges from '../components/ActiveChallenges';
 import Tips from '../components/Tips';
+import UpcomingEvents from '../components/UpcomingEvents';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Statistics></Statistics>
             <ActiveChallenges></ActiveChallenges>
             <Tips></Tips>
+            <UpcomingEvents></UpcomingEvents>
         </div>
     );
 };

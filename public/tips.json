@@ -1,0 +1,56 @@
+[
+  {
+    "title": "How to Compost at Home",
+    "content": "Simple steps for home composting, including separating wet and dry waste and maintaining moisture.",
+    "category": "Waste Management",
+    "author": "user@example.com",
+    "authorName": "Green User",
+    "upvotes": 25,
+    "createdAt": "2024-01-20T10:30:00Z"
+  },
+  {
+    "title": "Save Water by Reusing Rinse Water",
+    "content": "Collect leftover water from washing vegetables to use in gardening.",
+    "category": "Water Conservation",
+    "author": "naturelover@example.com",
+    "authorName": "Nature Lover",
+    "upvotes": 18,
+    "createdAt": "2024-02-05T08:15:00Z"
+  },
+  {
+    "title": "Grow Your Own Herbs",
+    "content": "Start with easy herbs like basil and mint to reduce store-bought packaging waste.",
+    "category": "Green Living",
+    "author": "ecohero@example.com",
+    "authorName": "Eco Hero",
+    "upvotes": 32,
+    "createdAt": "2024-03-12T14:40:00Z"
+  },
+  {
+    "title": "Carry a Reusable Kit Everywhere",
+    "content": "Keep a reusable bottle, metal straw, and cloth bag in your backpack to avoid single-use items.",
+    "category": "Sustainable Habits",
+    "author": "saver@example.com",
+    "authorName": "Earth Saver",
+    "upvotes": 41,
+    "createdAt": "2024-04-01T11:20:00Z"
+  },
+  {
+    "title": "Reduce Electricity with Natural Light",
+    "content": "Open your windows and curtains during the day to reduce artificial lighting usage.",
+    "category": "Energy Conservation",
+    "author": "lightwise@example.com",
+    "authorName": "Light Wise",
+    "upvotes": 27,
+    "createdAt": "2024-05-10T09:00:00Z"
+  },
+  {
+    "title": "Donate Old Clothes Instead of Throwing Away",
+    "content": "Give gently used clothes to charities and community centers to reduce textile waste.",
+    "category": "Waste Reduction",
+    "author": "clothcare@example.com",
+    "authorName": "Cloth Care",
+    "upvotes": 36,
+    "createdAt": "2024-06-18T16:10:00Z"
+  }
+]

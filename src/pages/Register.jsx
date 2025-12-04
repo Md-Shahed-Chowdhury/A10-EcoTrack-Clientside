@@ -131,7 +131,7 @@ const Register = () => {
             <hr />
             <button
               onClick={handleGoogleLogin}
-              className="btn btn-black mt-4"
+              className="btn btn-accent mt-4"
             >
               <FaGoogle /> Continue with Google
             </button>

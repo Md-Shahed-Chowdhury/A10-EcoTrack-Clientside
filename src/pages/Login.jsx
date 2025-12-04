@@ -45,7 +45,7 @@ const Login = () => {
       <div className="hero">
         <div className="hero-content flex-col">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
+            <h1 className="text-5xl font-bold">Login to EcoTrack!</h1>
           </div>
           <div className="card bg-primary max-w-md md:w-120 shrink-0 shadow-2xl p-3 md:p-6 lg:p-8">
             <h2 className="text-center text-2xl md:text-4xl font-bold">
@@ -107,7 +107,7 @@ const Login = () => {
             <hr />
             <button
               onClick={handleGoogleLogin}
-              className="btn mt-4"
+              className="btn mt-4 btn-accent"
             >
               <FaGoogle /> Continue with Google
             </button>

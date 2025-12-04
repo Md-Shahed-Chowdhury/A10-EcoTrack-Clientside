@@ -75,7 +75,7 @@ const MyProfile = () => {
                 defaultValue={user?.photoURL}
                 required
               />
-              <button className="btn btn-primary w-1/5">Update</button>
+              <button className="btn bg-black text-white w-1/5">Update</button>
             </fieldset>
           </form>
         </div>

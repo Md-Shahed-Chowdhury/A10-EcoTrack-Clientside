@@ -7,10 +7,10 @@
   name: "light";
   default: true;
   
-  --color-base-300:#55a630;
+  --color-base-300:#80b918;
+  --color-accent:#55a630;
   --color-primary:#eaf4f4;
   --color-secondary:#cce3de;
-  --color-accent:#80b918;
   
   
 

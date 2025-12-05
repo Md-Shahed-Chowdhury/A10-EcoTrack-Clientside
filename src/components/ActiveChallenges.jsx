@@ -40,7 +40,7 @@ const ActiveChallenges = () => {
         </div>
       ))}
     </div>
-    <button className="btn btn-primary text-black hover:bg-base-300 "><NavLink className={`flex  justify-center items-center gap-2`} to='/challenges'>View All Challenges<FaArrowRight /></NavLink></button>
+    <button className="btn bg-primary text-black hover:bg-base-300 "><NavLink className={`flex  justify-center items-center gap-2`} to='/challenges'>View All Challenges<FaArrowRight /></NavLink></button>
     </div>
   );
 };

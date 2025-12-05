@@ -10,6 +10,7 @@ import PageNotFound from "../layouts/PageNotFound";
 import MyProfile from "../pages/MyProfile";
 import PrivateRoute from "../pages/PrivateRoute";
 import ForgetPass from "../pages/ForgetPass";
+import AddChallenge from "../pages/AddChallenge";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/myActivities",
-        element: <MyActivities></MyActivities>,
+        element: <PrivateRoute><MyActivities></MyActivities></PrivateRoute>,
+      },
+      {
+        path:'/challenges/add',
+        element:<PrivateRoute><AddChallenge></AddChallenge></PrivateRoute>
       },
       {
         path: "/login",

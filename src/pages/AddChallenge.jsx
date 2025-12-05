@@ -1,24 +1,44 @@
 import React from "react";
+import useAxios from "../hooks/axios";
 
-const handleChallengeInsert = (e) =>{
-    const form = e.target;
-    e.preventDefault();
-    const title = form.title.value;
-    const category = form.category.value;
-    const description = form.description.value;
-    const duration = form.duration.value;
-    const target = form.target.value;
-    const impactMetric = form.impactMetric.value;
-    const createdBy = form.createdBy.value;
-    const startDate = form.startDate.value;
-    const endDate = form.endDate.value;
-    const imageUrl = form.imageUrl.value;
-    console.log(title, category, description, duration, target, impactMetric, createdBy, startDate, endDate, imageUrl);
-}
+
 const AddChallenge = () => {
+  const axiosInstance = useAxios();
+  const handleChallengeInsert = (e) => {
+  const form = e.target;
+  e.preventDefault();
+  const title = form.title.value;
+  const category = form.category.value;
+  const description = form.description.value;
+  const duration = form.duration.value;
+  const target = form.target.value;
+  const impactMetric = form.impactMetric.value;
+  const createdBy = form.createdBy.value;
+  const startDate = form.startDate.value;
+  const endDate = form.endDate.value;
+  const imageUrl = form.imageUrl.value;
+  const newChallenge = {
+    title,
+    category,
+    description,
+    duration,
+    target,
+    impactMetric,
+    createdBy,
+    startDate,
+    endDate,
+    imageUrl,
+    participants: 0,
+  };
+  axiosInstance.post('/challenges', newChallenge)
+  .then(data=>{
+    console.log(data.data);
+  })
+};
+
   return (
-    <form onSubmit={handleChallengeInsert}
-      
+    <form
+      onSubmit={handleChallengeInsert}
       className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-2xl space-y-4 mt-10"
     >
       <h2 className="text-2xl font-bold mb-4 text-center">
@@ -80,14 +100,14 @@ const AddChallenge = () => {
         className="w-full p-3 border rounded-lg"
         required
       />
-    <label>Start Date</label>
+      <label>Start Date</label>
       <input
         type="date"
         name="startDate"
         className="w-full p-3 border rounded-lg"
         required
       />
-    <label>End Date</label>
+      <label>End Date</label>
       <input
         type="date"
         name="endDate"

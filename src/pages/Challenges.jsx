@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 import { FaArrowRight } from "react-icons/fa";
+import useAxios from "../hooks/axios";
 const handleViewChallenge = () => {
   // Logic to view challenge details
   console.log("View Challenge button clicked");
 }
-const ActiveChallenges = () => {
-  const [sliderChallenges, setSliderChallenges] = useState([]);
+const Challenges = () => {
+  const axiosInstance = useAxios();
+  const [allChallenges, setAllChallenges] = useState([]);
   useEffect(() => {
-    fetch("/challenges.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setSliderChallenges([...data]);
-      });
-  }, []);
+    axiosInstance.get('/challenges')
+    .then(data =>{
+      console.log(data.data);
+        setAllChallenges([...data.data]);
+    })
+  }, [axiosInstance]);
   return (
     <div className="flex flex-col justify-center items-center mt-5 lg:mt-10">
         <h2 className=" text-3xl md:text-4xl font-bold">All Challenges</h2>
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-      {sliderChallenges.map((item, index) => (
+      {allChallenges.map((item, index) => (
         <div
           key={index}
           className="bg-white rounded-2xl shadow-md hover:shadow-xl transition border border-gray-200 overflow-hidden"
@@ -46,4 +48,4 @@ const ActiveChallenges = () => {
   );
 };
 
-export default ActiveChallenges;
+export default Challenges;

@@ -1,5 +1,6 @@
 import React from "react";
 import useAxios from "../hooks/axios";
+import { toast } from "react-toastify";
 
 
 const AddChallenge = () => {
@@ -32,7 +33,10 @@ const AddChallenge = () => {
   };
   axiosInstance.post('/challenges', newChallenge)
   .then(data=>{
-    console.log(data.data);
+    if(data.data.insertedId){
+      toast.success('Challenge created successfully');
+      form.reset();
+    } 
   })
 };
 

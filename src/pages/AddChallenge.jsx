@@ -1,9 +1,11 @@
-import React from "react";
+import React, { use } from "react";
 import useAxios from "../hooks/UseAxios";
 import { toast } from "react-toastify";
+import { MyContext } from "../provider/ContextProvider";
 
 const AddChallenge = () => {
   const axiosInstance = useAxios();
+  const {user} = use(MyContext);
   const handleChallengeInsert = (e) => {
     const form = e.target;
     e.preventDefault();
@@ -101,6 +103,7 @@ const AddChallenge = () => {
         placeholder="Created By (Email)"
         className="w-full p-3 border rounded-lg"
         required
+        value = {user?.email}
       />
       <label>Start Date</label>
       <input

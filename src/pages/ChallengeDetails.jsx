@@ -1,18 +1,25 @@
 import { useLoaderData } from "react-router";
 import { Calendar, Target, Tag, Users, Clock } from "lucide-react";
 import ContextProvider, { MyContext } from "../provider/ContextProvider";
-import { use } from "react";
-import useAuth from "../hooks/useAuth";
+import useAxios from "../hooks/UseAxios";
+import { toast } from "react-toastify";
+
+
 
 const ChallengeDetails = () => {
   const data = useLoaderData();
   const challenge = data.data;
-  const { user } = use(MyContext);
-  console.log(user.email);
-  const handleJoinChallenge = () => {
+   const axiosInstance = useAxios();
+  const handleJoinChallenge = (id) => {
     // Logic to join the challenge
-    console.log(`Joining challenge: ${challenge.title}`);
-  };
+    console.log(`Joining challenge with ID: ${id}`);
+    axiosInstance.post(`/challenge/join/${id}`).then((data) => {
+      if (data.data.insertedId) {
+        toast.success("Successfully joined the challenge");
+      }
+
+  })
+};
 
   return (
     <div className="max-w-5xl mx-auto p-6">
@@ -68,7 +75,7 @@ const ChallengeDetails = () => {
           </p>
           <button
             className="btn bg-base-300 block hover:opacity-70 hover:scale-110 transition duration-75"
-            onClick={() => handleJoinChallenge()}
+            onClick={() => handleJoinChallenge(challenge._id)}
           >
             Join Challenge
           </button>

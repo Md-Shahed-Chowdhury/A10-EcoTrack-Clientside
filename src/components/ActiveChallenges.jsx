@@ -1,19 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { FaArrowRight } from "react-icons/fa";
-const handleViewChallenge = () => {
-  // Logic to view challenge details
-  console.log("View Challenge button clicked");
-}
+import useAxios from "../hooks/axios";
+
 const ActiveChallenges = () => {
+
   const [sliderChallenges, setSliderChallenges] = useState([]);
-  useEffect(() => {
-    fetch("/challenges.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setSliderChallenges([...data.slice(0,6)]);
-      });
-  }, []);
+    const axiosInstance = useAxios();
+    const navigate = useNavigate();
+     const handleViewChallenge = (id) => {
+    console.log("View Challenge button clicked");
+    navigate(`/challenges/${id}`);
+  };
+   useEffect(() => {
+  
+      axiosInstance.get('/challenges')
+      .then(data =>{
+        setSliderChallenges([...data.data.slice(0,6)]);
+      })
+    }, [axiosInstance]);
   return (
     <div className="flex flex-col justify-center items-center">
         <h2 className=" text-3xl md:text-4xl font-bold">Active Challenges</h2>
@@ -36,7 +41,7 @@ const ActiveChallenges = () => {
               Impact: {item.impactMetric}
             </p>
           </div>
-          <button onClick={handleViewChallenge} className="btn bg-base-300 hover:scale-110 ml-5 mb-5 transition duration-100" >View details</button>
+          <button onClick={()=>handleViewChallenge(item._id)} className="btn bg-base-300 hover:scale-110 ml-5 mb-5 transition duration-100" >View details</button>
         </div>
       ))}
     </div>

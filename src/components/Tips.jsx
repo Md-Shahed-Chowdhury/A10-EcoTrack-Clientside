@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
+import useAxios from "../hooks/axios";
 
 const Tips = () => {
   const [tips, setTips] = useState([]);
+  const axiosInstance = useAxios();
   useEffect(() => {
-    fetch("/tips.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setTips([...data.slice(0, 6)]);
-      });
-  }, []);
+
+    axiosInstance.get('/tips')
+    .then(data =>{
+      setTips([...data.data.slice(0,6)]);
+    })
+  }, [axiosInstance]);
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString();

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Calendar, MapPin } from "lucide-react";
-import useAxios from "../hooks/axios";
+import useAxios from "../hooks/UseAxios";
 
 const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -8,17 +8,15 @@ const formatDate = (dateString) => {
 };
 const UpcomingEvents = () => {
   const [upcoming, setUpcoming] = useState([]);
-  
+
   const axiosInstance = useAxios();
   useEffect(() => {
-
-    axiosInstance.get('/events')
-    .then(data =>{
+    axiosInstance.get("/events").then((data) => {
       data = data.data
-          .sort((a, b) => new Date(a.date) - new Date(b.date))
-          .slice(0, 4);
-      setUpcoming([...data.slice(0,4)]);
-    })
+        .sort((a, b) => new Date(a.date) - new Date(b.date))
+        .slice(0, 4);
+      setUpcoming([...data.slice(0, 4)]);
+    });
   }, [axiosInstance]);
 
   return (

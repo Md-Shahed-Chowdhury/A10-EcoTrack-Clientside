@@ -97,7 +97,7 @@ const Nav = () => {
                 onMouseLeave={() => setHover(false)}
               />
             </div>
-            <div className="dropdown dropdown-end">
+            <div className="dropdown dropdown-end z-10">
               <div tabIndex={0} role="button" className="btn m-1">
                 Profile
               </div>

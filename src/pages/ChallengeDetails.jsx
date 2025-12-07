@@ -1,9 +1,18 @@
-
 import { useLoaderData } from "react-router";
 import { Calendar, Target, Tag, Users, Clock } from "lucide-react";
+import ContextProvider, { MyContext } from "../provider/ContextProvider";
+import { use } from "react";
+import useAuth from "../hooks/useAuth";
+
 const ChallengeDetails = () => {
   const data = useLoaderData();
   const challenge = data.data;
+  const { user } = use(MyContext);
+  console.log(user.email);
+  const handleJoinChallenge = () => {
+    // Logic to join the challenge
+    console.log(`Joining challenge: ${challenge.title}`);
+  };
 
   return (
     <div className="max-w-5xl mx-auto p-6">
@@ -57,7 +66,12 @@ const ChallengeDetails = () => {
           <p className="bg-gray-100 p-3 rounded-lg inline-block text-gray-900 font-medium">
             Impact Metric: {challenge.impactMetric}
           </p>
-          <button className="btn bg-base-300 block hover:opacity-70 hover:scale-110 transition duration-75">Join Challenge</button>
+          <button
+            className="btn bg-base-300 block hover:opacity-70 hover:scale-110 transition duration-75"
+            onClick={() => handleJoinChallenge()}
+          >
+            Join Challenge
+          </button>
         </div>
       </div>
     </div>

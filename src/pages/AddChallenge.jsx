@@ -1,44 +1,42 @@
 import React from "react";
-import useAxios from "../hooks/axios";
+import useAxios from "../hooks/UseAxios";
 import { toast } from "react-toastify";
-
 
 const AddChallenge = () => {
   const axiosInstance = useAxios();
   const handleChallengeInsert = (e) => {
-  const form = e.target;
-  e.preventDefault();
-  const title = form.title.value;
-  const category = form.category.value;
-  const description = form.description.value;
-  const duration = form.duration.value;
-  const target = form.target.value;
-  const impactMetric = form.impactMetric.value;
-  const createdBy = form.createdBy.value;
-  const startDate = form.startDate.value;
-  const endDate = form.endDate.value;
-  const imageUrl = form.imageUrl.value;
-  const newChallenge = {
-    title,
-    category,
-    description,
-    duration,
-    target,
-    impactMetric,
-    createdBy,
-    startDate,
-    endDate,
-    imageUrl,
-    participants: 0,
+    const form = e.target;
+    e.preventDefault();
+    const title = form.title.value;
+    const category = form.category.value;
+    const description = form.description.value;
+    const duration = form.duration.value;
+    const target = form.target.value;
+    const impactMetric = form.impactMetric.value;
+    const createdBy = form.createdBy.value;
+    const startDate = form.startDate.value;
+    const endDate = form.endDate.value;
+    const imageUrl = form.imageUrl.value;
+    const newChallenge = {
+      title,
+      category,
+      description,
+      duration,
+      target,
+      impactMetric,
+      createdBy,
+      startDate,
+      endDate,
+      imageUrl,
+      participants: 0,
+    };
+    axiosInstance.post("/challenges", newChallenge).then((data) => {
+      if (data.data.insertedId) {
+        toast.success("Challenge created successfully");
+        form.reset();
+      }
+    });
   };
-  axiosInstance.post('/challenges', newChallenge)
-  .then(data=>{
-    if(data.data.insertedId){
-      toast.success('Challenge created successfully');
-      form.reset();
-    } 
-  })
-};
 
   return (
     <form

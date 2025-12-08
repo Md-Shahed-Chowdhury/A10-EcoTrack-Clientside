@@ -15,6 +15,7 @@ import { axiosInstance } from "../hooks/UseAxios";
 import ChallengeDetails from "../pages/ChallengeDetails";
 import MyChallenges from "../pages/MyChallenges";
 import MyActivitiesDetails from "../pages/MyActivitiesDetails";
+import UpdateChallenge from "../pages/UpdateChallenge";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/my-activities/:id",
         element:<PrivateRoute><MyActivitiesDetails></MyActivitiesDetails></PrivateRoute>
+      },
+      {
+        path: "/updateChallenge/:id",
+        element:<PrivateRoute><UpdateChallenge></UpdateChallenge></PrivateRoute>
       },
       {
         path: "/challenges/add",

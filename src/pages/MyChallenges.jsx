@@ -1,36 +1,35 @@
-
 import { NavLink, useNavigate } from "react-router";
 import { FaArrowRight } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import useAxios from "../hooks/UseAxios";
 import { toast } from "react-toastify";
 
-
 const MyChallenges = () => {
   const axiosInstance = useAxios();
-  const [myChallenges, setMyChallenges] = useState([]); 
-  const [changed,setChanged]=useState(false);
+  const [myChallenges, setMyChallenges] = useState([]);
+  const [changed, setChanged] = useState(false);
   const navigate = useNavigate();
-//   const data = useLoaderData();
-//   const allChallenges = data.data;
+  //   const data = useLoaderData();
+  //   const allChallenges = data.data;
   const handleViewChallenge = (id) => {
     console.log("View Challenge button clicked");
     navigate(`/challenges/${id}`);
   };
-  const handleDeleteChallenge = (id) =>{
-    axiosInstance.delete(`/challenges/${id}`).then(data=>{
-        console.log(data.data);
-        if(data.data.deletedCount>0){
-            toast.success("Challenge deleted successfully");
-            setChanged(!changed);
-        }
-    })
-  }
-  useEffect(()=>{
-    axiosInstance.get("/myChallenges").then(data=>{
-        setMyChallenges([...data.data])
-    })
-  },[axiosInstance,changed])
+  const handleDeleteChallenge = (id) => {
+    axiosInstance.delete(`/challenges/${id}`).then((data) => {
+      console.log(data.data);
+      if (data.data.deletedCount > 0) {
+        toast.success("Challenge deleted successfully");
+        setChanged(!changed);
+      }
+    });
+  };
+
+  useEffect(() => {
+    axiosInstance.get("/myChallenges").then((data) => {
+      setMyChallenges([...data.data]);
+    });
+  }, [axiosInstance, changed]);
 
   return (
     <div className="flex flex-col justify-center items-center mt-5 lg:mt-10">
@@ -60,11 +59,17 @@ const MyChallenges = () => {
             >
               View details
             </button>
+            <NavLink to={`/updateChallenge/${item._id}`}>
+              <button className="btn bg-yellow-500 hover:scale-110 ml-5 mb-5 transition duration-100">
+                Update
+              </button>
+            </NavLink>
+
             <button
               onClick={() => handleDeleteChallenge(item._id)}
               className="btn bg-red-400 hover:scale-110 ml-5 mb-5 transition duration-100"
             >
-              Delete Challenge
+              Delete
             </button>
           </div>
         ))}

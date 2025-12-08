@@ -96,8 +96,8 @@ const MyActivitiesDetails = () => {
             <p><strong>Join Date:</strong> {activity.joinDate}</p>
           </div>
           <div className="space-x-5">
-            <button onClick={()=>{handleStatus(activity._id,"Ongoing")}} className="btn bg-yellow-500 ">Ongoing</button>
-          <button onClick={()=>{handleStatus(activity._id,"Finished")}} className="btn bg-green-500 ">Finished</button>
+            <button onClick={()=>{handleStatus(activity._id,"Ongoing")}} className="btn hover:scale-110 transition duration-75 bg-yellow-500 ">Ongoing</button>
+          <button onClick={()=>{handleStatus(activity._id,"Finished")}} className="btn hover:scale-110 transition duration-75 bg-green-500 ">Finished</button>
           </div>
         </div>
       </div>

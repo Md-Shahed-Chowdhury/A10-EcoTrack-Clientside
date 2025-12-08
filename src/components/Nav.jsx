@@ -77,7 +77,7 @@ const Nav = () => {
             <NavLink to="/challenges">Challenges</NavLink>
           </li>
           <li>
-            <NavLink to="/myActivities">My activities</NavLink>
+            <NavLink to="/my-activities">My activities</NavLink>
           </li>
           <li>
               <NavLink to="/myChallenges">My Challenges</NavLink>
@@ -118,7 +118,7 @@ const Nav = () => {
                   <NavLink to="myProfile">My Profile</NavLink>
                 </li>
                 <li>
-                  <NavLink to="myActivities">My Activities</NavLink>
+                  <NavLink to="/my-activities">My Activities</NavLink>
                 </li>
                 <li>
                   <Link

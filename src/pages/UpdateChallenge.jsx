@@ -1,6 +1,7 @@
 import React from "react";
 import useAxios from "../hooks/UseAxios";
 import { useParams } from "react-router";
+import { toast } from "react-toastify";
 
 const UpdateChallenge = () => {
     const axiosInstance = useAxios();
@@ -22,8 +23,11 @@ const UpdateChallenge = () => {
     console.log("Updated Data:", updatedData);
     axiosInstance.patch(`/my-challenges/${id}`, updatedData).then((response) => {
       console.log("Update response:", response.data);
+      if(response.data.modifiedCount > 0) {
+        toast.success("Challenge updated successfully");
+        form.reset();
+      }
       
-      form.reset();
     });
 
   };

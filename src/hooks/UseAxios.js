@@ -3,21 +3,18 @@ import useAuth from "./useAuth";
 import { useEffect } from "react";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://a-10-eco-track-server.vercel.app",
 });
-
 
 // const useAxios = () => {
 //   const { user } = useAuth();
 
-    
 //  useEffect(() => {
 //    axiosInstance.interceptors.request.use((config) => {
 //     if(user?.email)
 //     {
 //       config.headers.authorization = `bearer  ${user.email}`;
 //     }
-    
 
 //     return config;
 //   });
@@ -28,8 +25,8 @@ const useAxios = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    const interceptor = axiosInstance.interceptors.request.use((config) => {  
-      config.headers.authorization = `bearer ${user?.email || ""}`;  
+    const interceptor = axiosInstance.interceptors.request.use((config) => {
+      config.headers.authorization = `bearer ${user?.email || ""}`;
       return config;
     });
 
